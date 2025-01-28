@@ -1,0 +1,66 @@
+/* bootstrap mi da la possibilità di suddividere il mio shermo in 12 colonne,  senza 1 riga non avro 12 colonne, ciò significa che il mio schermpoo a 12 spazi
+
+se volessi suddividere a metà una riga 1 spazio avra 6 e un'altro soazio avra 6 
+
+se volessi suddividere in 3 una parte ne avrà 4 e un'altro 8 
+
+ricordiamoci che il massimo è 12*/
+
+h1{
+    animation-name: h1zoom;  /* nome della mia animazione */
+    animation-duration: 0.5s; /* avrà una durat di 0.5 secondi */
+    animation-iteration-count: 1; /* questa funzzione serve a capire quanto si animerà lafunzione, in questo caso si animerà all'infinto */ 
+    animation-timing-function: linear; /* l'animazione sarà lineare */
+    animation-delay: 0s; /* nessun ritrdo di partenza */
+}
+
+/* stiamo costruendo i frame */
+
+@keyframes h1zoom /* nome dato alla animazione */ {
+    from{
+        opacity: 0; /* ora non è visoibile */
+    }
+    to{
+        transform: scale(1.5) ;  /* perche quello che stiamo facendo è una transformazione */ /* si meytte perforza lo scale per far fare lo zoom */
+        opacity: 1; 
+    }
+}
+
+#hero a:hover{
+    animation-name: btn-zoom;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /* serve per bloccare l'animazzione */
+}
+
+@keyframes btn-zoom {
+    to{
+        transform: rotate(360deg); /* serve per far girare il bottone a 360 gradi */
+        /* transform: scale(1.5); serve per zommare */
+        transform: translateY(300px); /* ci permette di  muoverci nelle asse delle X e delle Y */
+        /* sposta elementi sopra esotto e destra e sisnista  */
+    }
+}
+
+.card{
+    overflow: hidden ; /* è tutto lo spazio esternjo al nostrro contenitire */ 
+    /* in questso caso sto dicendo che tutto quello che succede fuori nascondilo */
+}
+
+.card img:hover{    
+    animation-name: cardzoom ;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cardzoom {
+    from{
+        filter: grayscale(100%); /* se vai con il cursor del mouse l'immagine diventa grigia poi trona a colori  */
+    }
+    to{
+        transform: scale(2);
+    }
+}
